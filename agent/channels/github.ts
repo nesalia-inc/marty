@@ -1,7 +1,7 @@
 import { githubChannel } from "eve/channels/github";
 
 export default githubChannel({
-  botName: "martyy-code",
+  botName: "marty-action",
   credentials: {
     appId: process.env.GITHUB_APP_ID,
     privateKey: process.env.GITHUB_APP_PRIVATE_KEY,
