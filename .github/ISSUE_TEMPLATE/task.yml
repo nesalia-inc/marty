@@ -1,0 +1,42 @@
+name: Task / Chore
+description: Maintenance, tooling, dependency updates, or other non-feature work
+title: '[Chore]: '
+labels: ['type: chore', 'status: triage']
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: What needs to be done?
+      description: A clear and concise description of the task.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How will we know this task is done?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type of work
+      options:
+        - Documentation
+        - Tooling / dev experience
+        - CI / GitHub Actions
+        - Dependencies
+        - Code hygiene (formatting, lint rules)
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: related
+    attributes:
+      label: Related issues or discussions
+      placeholder: '#123, discussion link, etc.'
+    validations:
+      required: false

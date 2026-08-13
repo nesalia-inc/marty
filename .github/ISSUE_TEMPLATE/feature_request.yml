@@ -1,0 +1,55 @@
+name: Feature Request
+description: Suggest a new capability for the agent
+title: '[FEATURE] '
+labels: ['enhancement']
+body:
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Problem or motivation
+      description: What user-facing problem does this feature solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: |
+        Describe the proposed behavior and the files it would touch
+        (for example `agent/extensions/github.ts`, a new channel, etc.).
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches you considered and why this one is better.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Surface affected
+      description: Which part of the project does this change?
+      options:
+        - Agent core (`agent/agent.ts`)
+        - Extension GitHub (`agent/extensions/github.ts`)
+        - Channel (`agent/channels/`)
+        - System prompt (`agent/instructions.md`)
+        - CI / infrastructure
+        - Documentation
+        - Other
+      multiple: true
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contributor
+    attributes:
+      label: Are you willing to open a pull request?
+      options:
+        - label: I am willing to submit a PR for this
+        - label: I would like guidance before starting
