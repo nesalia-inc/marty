@@ -1,0 +1,61 @@
+name: Refactor Request
+description: Propose a refactor of agent code or architecture
+title: '[Refactor]: '
+labels: ['type: refactor', 'status: triage']
+body:
+  - type: textarea
+    id: code
+    attributes:
+      label: Code to refactor
+      description: Exact paths and the lines or functions involved.
+      placeholder: |
+        File: `agent/extensions/github.ts`
+        Symbols: `handleIssueComment`, `summarizePullRequest`
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why refactor?
+      description: Complexity, duplication, performance, maintainability.
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach
+    attributes:
+      label: Proposed approach
+      description: Outline the target shape and any migration steps.
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and rollback
+      description: What could break and how would we revert if needed?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Estimated effort
+      options:
+        - XS — under an hour
+        - S — half a day
+        - M — 1-2 days
+        - L — a week or more
+        - Unknown — needs investigation
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: criteria
+    attributes:
+      label: Acceptance criteria
+      options:
+        - label: No behavior change for end users
+        - label: Existing `evals/` tests still pass (or are updated)
+        - label: `README.md` and `AGENTS.md` updated if behavior or contracts change
