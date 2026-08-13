@@ -1,4 +1,4 @@
-import githubExtension from '@github-tools/eve-extension'
+import githubExtension from '@github-tools/eve-extension';
 
 export default githubExtension({
   // connector: 'github/github-agent', // or token: process.env.GITHUB_TOKEN
@@ -7,4 +7,4 @@ export default githubExtension({
   requireApproval: {
     addPullRequestComment: ({ toolInput }) => toolInput?.owner !== 'vercel-labs',
   },
-})
+});
