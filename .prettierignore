@@ -1,0 +1,10 @@
+node_modules
+.eve
+.vercel
+.next
+.output
+.nitro
+dist
+package-lock.json
+*.tsbuildinfo
+.github/ISSUE_TEMPLATE/*.yml
